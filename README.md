@@ -1,6 +1,8 @@
 # TestAutomationFramework
 Building Test Automation Framework using Selenium, C# and NUnit
 
+## Source
+Gruided Project in Coursera 
 ## Overview
 - Task 1: Understanding Test Automation Framework and creating a directory structure
 - Task 2: Creating an automation layer and writing a generic method to invoke a browser and navigate to a URL
@@ -12,3 +14,5 @@ Building Test Automation Framework using Selenium, C# and NUnit
 - Task 8: Generating logs and reports using Extent report
 - Task 9: Adding screenshots to failed test cases
 - Task 10: Adding screenshots to the reports
+
+![image](https://github.com/josen11/TestAutomationFramework/assets/13191252/c5747762-41de-4934-8b69-3254d7185d47)
