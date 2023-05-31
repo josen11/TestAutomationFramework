@@ -1,5 +1,8 @@
+using System;
+using System.IO;
 using CommonLibs.Implementation;
 using Guru99Application.Pages;
+using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 
 namespace Guru99Tests.tests
@@ -8,12 +11,25 @@ namespace Guru99Tests.tests
     {
         public CommonDriver CmnDriver;
         public Guru99LoginPage loginPage;
-        string url = "http://demo.guru99.com/v4";
+        private IConfiguration _configuration;
+        string url;
+        string currentProjectDirectory;
+
+        [OneTimeSetUp]
+        public void preSetup()
+        {
+            string workingDirectory = Environment.CurrentDirectory;
+            currentProjectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+            _configuration= new ConfigurationBuilder().AddJsonFile(currentProjectDirectory+"/config/appSettings.json").Build();
+
+        }
 
         [SetUp]
         public void Setup()
         {
-            CmnDriver = new CommonDriver("chrome");
+            string browserType = _configuration["browserType"];
+            CmnDriver = new CommonDriver(browserType);
+            url=_configuration["baseUrl"];
             CmnDriver.NavigateToURL(url);
             loginPage=new Guru99LoginPage(CmnDriver.Driver);
         }
