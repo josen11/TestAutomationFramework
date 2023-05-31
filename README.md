@@ -20,3 +20,7 @@ Gruided Project in Coursera
 - Applicaiton Layer = Logic
 - Test Layer
 ![image](https://github.com/josen11/TestAutomationFramework/assets/13191252/c5747762-41de-4934-8b69-3254d7185d47)
+
+### ExtentReports
+We can add a report with the result of the entire testing in our project, even we can add screenshoots and more.
+![image](https://github.com/josen11/TestAutomationFramework/assets/13191252/1aa2673d-1230-4ea6-b0f4-ab8cf0146c9a)
