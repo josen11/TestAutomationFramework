@@ -15,4 +15,8 @@ Gruided Project in Coursera
 - Task 9: Adding screenshots to failed test cases
 - Task 10: Adding screenshots to the reports
 
+
+Automation Layer = Common Library
+Applicaiton Layer = Logic
+Test Layer
 ![image](https://github.com/josen11/TestAutomationFramework/assets/13191252/c5747762-41de-4934-8b69-3254d7185d47)
