@@ -59,6 +59,10 @@ namespace CommonLibs.Implementation
             {
                 Driver.Quit();
             }
+        }
+        public string GetPageTitle()
+        {
+            return Driver.Title;
         }   
    }
 }
