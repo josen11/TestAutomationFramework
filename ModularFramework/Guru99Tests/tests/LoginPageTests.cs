@@ -1,3 +1,4 @@
+using AventStack.ExtentReports;
 using CommonLibs.Implementation;
 using NUnit.Framework;
 
@@ -15,6 +16,8 @@ namespace Guru99Tests.tests
 
         public void VerifyLoginTest()
         {
+            extentReportUtils.createATestCase("Verify Login Test");
+            extentReportUtils.addTestLog(Status.Info,"Starting testing");
             // Go to url and register a new user with email, this generates the user and password.
             loginPage.LoginToApplication("mngr288890","sutydum");
 
@@ -22,6 +25,8 @@ namespace Guru99Tests.tests
             string expectedTitle = "Guru99 Bank Manager Home Page";
             string actualTitle = CmnDriver.GetPageTitle();
             Assert.AreEqual(expectedTitle,actualTitle);
+            
+            extentReportUtils.addTestLog(Status.Info,"Starting testing");
         }
     }
 }
