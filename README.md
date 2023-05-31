@@ -23,4 +23,4 @@ Gruided Project in Coursera
 
 ### ExtentReports
 We can add a report with the result of the entire testing in our project, even we can add screenshoots and more.
-![image](https://github.com/josen11/TestAutomationFramework/assets/13191252/37515a35-7f54-420f-8873-2f0754f92f36)
+![image](https://github.com/josen11/TestAutomationFramework/assets/13191252/1aa2673d-1230-4ea6-b0f4-ab8cf0146c9a)
