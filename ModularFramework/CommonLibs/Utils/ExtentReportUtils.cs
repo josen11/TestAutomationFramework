@@ -26,6 +26,10 @@ namespace CommonLibs.Utils
         {
             extentTest.Log(status, comment);
         }
+        public void addScreenshot (string screenshootFileName)
+        {
+            extentTest.AddScreenCaptureFromPath(screenshootFileName);
+        }
         public void flushReport()
         {
             extentReports.Flush();

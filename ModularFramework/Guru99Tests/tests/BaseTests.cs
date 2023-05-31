@@ -6,6 +6,7 @@ using CommonLibs.Utils;
 using Guru99Application.Pages;
 using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 namespace Guru99Tests.tests
 {
@@ -16,6 +17,7 @@ namespace Guru99Tests.tests
         private IConfigurationRoot _configuration;
         public ExtentReportUtils extentReportUtils;
         string url;
+        ScreenshotUtils screenshot;
         string currentProjectDirectory;
         string currentSolutionDirectory;
         string reportFileName;
@@ -43,11 +45,21 @@ namespace Guru99Tests.tests
             
             CmnDriver.NavigateToURL(url);
             loginPage=new Guru99LoginPage(CmnDriver.Driver);
+            screenshot = new ScreenshotUtils(CmnDriver.Driver);
         }
 
         [TearDown]
+        // In case of failure
         public void TearDown()
         {
+            string currentExecutionTime = DateTime.Now.ToString("s");
+            string screenshotFileName = $"{currentSolutionDirectory}/screenshots/test-{currentExecutionTime}.jpg";
+            if(TestContext.CurrentContext.Result.Outcome == ResultState.Failure)
+            {
+                extentReportUtils.addTestLog(Status.Fail, "One or more step failed");
+                screenshot.CaptureAndSaveScreenshot(screenshotFileName);
+                extentReportUtils.addScreenshot(screenshotFileName);
+            }
             CmnDriver.CloseAllBrowser();
         }
 
